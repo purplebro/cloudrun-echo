@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const https = require('https')
-import { readFile } from 'fs';
+const fs = require('fs')
 
 
 app.use(express.json())
@@ -49,7 +49,7 @@ app.post('/', (req, res) => {
 const port = process.env.PORT || 80
 app.listen(port, () => {
   console.log('Hello world listening on port', port)
-  readFile('/.tencentcloudbase/wx/cloudbase_access_token', (err, data) => {
+  fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', (err, data) => {
     if (err) throw err;
     console.log('cloudbase_access_token', data);
   });
