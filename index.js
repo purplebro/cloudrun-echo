@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+import { readFile } from 'fs';
+
 
 app.use(express.json())
 
@@ -18,4 +20,8 @@ app.post('/', (req, res) => {
 const port = process.env.PORT || 80
 app.listen(port, () => {
   console.log('Hello world listening on port', port)
+  readFile('/.tencentcloudbase/wx/cloudbase_access_token', (err, data) => {
+    if (err) throw err;
+    console.log('cloudbase_access_token', data);
+  });
 })
