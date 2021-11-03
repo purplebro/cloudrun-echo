@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', (err, data) => {
+  fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', "utf8", (err, data) => {
     if (err) throw err;
     console.log('cloudbase_access_token', data);
   });
@@ -35,7 +35,7 @@ app.post('/', (req, res) => {
   console.log('options', options)
   console.log('data', data)
   request(options, function (error, response) {
-    res.send('http response', response.body)
+    res.json(response.body)
     console.log(error, response.body)
     return
   })
