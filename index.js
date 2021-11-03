@@ -25,7 +25,7 @@ app.post('/', (req, res) => {
   })
   const options = {
     uri: 'http://api.weixin.qq.com/wxa/getopendata?openid=' + req.headers["x-wx-openid"],
-    body: JSON.stringify(data),
+    body: data,
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
