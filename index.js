@@ -19,7 +19,12 @@ app.get('/pathtest', (req, res) => {
 })
 
 app.post('/echo', (req, res) => {
-  res.json(req.body)
+  res.json({
+    body: req.body,
+    headers: req.headers,
+    query: req.query,
+    path: req.path,
+  })
 })
 
 app.post('/', (req, res) => {
@@ -29,7 +34,7 @@ app.post('/', (req, res) => {
   });
 
   console.log('Hello world received a request.')
-  console.log('req body', req.body)kkkkkk
+  console.log('req body', req.body)
   const data = JSON.stringify({
     "cloudid_list": [req.body.cloudID]
   })

@@ -1,0 +1,9 @@
+{
+  "containers": [
+    {
+      "name": "nodejs_helloworld",
+      "domain": "",
+      "ip": ""
+    }
+  ]
+}
