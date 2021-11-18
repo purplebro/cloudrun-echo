@@ -12,6 +12,12 @@ app.get('/', (req, res) => {
   res.send('Hello, Welcome to CloudBase!')
 })
 
+app.get('/pathtest', (req, res) => {
+  console.log('Hello world received a request.')
+  console.log('req body', req.body)
+  res.send('Hello, Welcome to CloudBase! Path Test')
+})
+
 app.post('/', (req, res) => {
   fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', "utf8", (err, data) => {
     if (err) throw err;
