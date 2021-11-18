@@ -34,11 +34,15 @@ app.post('/', (req, res) => {
   }
   console.log('options', options)
   console.log('data', data)
-  request(options, function (error, response) {
-    res.json(response.body)
-    console.log(error, response.body)
-    return
+  res.json({
+    openid: req.headers["x-wx-openid"],
+    req_headers: req.headers
   })
+  // request(options, function (error, response) {
+  //   res.json(response.body)
+  //   console.log(error, response.body)
+  //   return
+  // })
 })
 
 const port = process.env.PORT || 80
