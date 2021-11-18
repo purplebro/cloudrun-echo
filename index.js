@@ -18,6 +18,10 @@ app.get('/pathtest', (req, res) => {
   res.send('Hello, Welcome to CloudBase! Path Test')
 })
 
+app.post('/echo', (req, res) => {
+  res.json(req)
+})
+
 app.post('/', (req, res) => {
   fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', "utf8", (err, data) => {
     if (err) throw err;
