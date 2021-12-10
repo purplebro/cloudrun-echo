@@ -27,6 +27,11 @@ app.post('/echo', (req, res) => {
   })
 })
 
+app.post('/callback', (req, res) => {
+  console.log('req body', req.body)
+  res.send("success")
+})
+
 app.post('/', (req, res) => {
   fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', "utf8", (err, data) => {
     if (err) throw err;
