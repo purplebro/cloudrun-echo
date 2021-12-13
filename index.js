@@ -32,7 +32,7 @@ app.post('/callback', (req, res) => {
   res.send("success")
 })
 
-app.post('/', (req, res) => {
+app.post('/openapi', (req, res) => {
   fs.readFile('/.tencentcloudbase/wx/cloudbase_access_token', "utf8", (err, data) => {
     if (err) throw err;
     console.log('cloudbase_access_token', data);
