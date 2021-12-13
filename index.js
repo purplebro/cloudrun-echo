@@ -58,11 +58,11 @@ app.post('/openapi', (req, res) => {
     openid: req.headers["x-wx-openid"],
     req_headers: req.headers
   })
-  // request(options, function (error, response) {
-  //   res.json(response.body)
-  //   console.log(error, response.body)
-  //   return
-  // })
+  request(options, function (error, response) {
+    res.json(response.body)
+    console.log(error, response.body)
+    return
+  })
 })
 
 const port = process.env.PORT || 80
