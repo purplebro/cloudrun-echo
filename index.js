@@ -59,8 +59,9 @@ app.post('/openapi', (req, res) => {
     req_headers: req.headers
   })
   request(options, function (error, response) {
+    console.log(response.body)
     res.json(response.body)
-    console.log(error, response.body)
+    // console.log(error, response.body)
     return
   })
 })
