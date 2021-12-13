@@ -54,13 +54,13 @@ app.post('/openapi', (req, res) => {
   }
   console.log('options', options)
   console.log('data', data)
-  res.json({
+  const preMsg = {
     openid: req.headers["x-wx-openid"],
     req_headers: req.headers
-  })
+  };
   request(options, function (error, response) {
     console.log(response.body)
-    res.json(response.body)
+    res.json({...preMsg , reqResp: response.body})
     // console.log(error, response.body)
     return
   })
